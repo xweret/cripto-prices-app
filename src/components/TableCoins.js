@@ -1,4 +1,5 @@
 import React from 'react';
+import CoinRow from './CoinRow';
 
 // creo al tabla con los datos de la api
 
@@ -12,10 +13,8 @@ const TableCoins = ({coins}) => {
                 </tr>
             </thead>
             <tbody>
-                {coins.map(coin => (
-                    <tr key={coin.name}>
-                        <td>{coin.name}</td>
-                    </tr>
+                {coins.map((coin, index) => (
+                    <CoinRow coin = {coin} key={index}/>
                 ))}
             </tbody>
         </table>
