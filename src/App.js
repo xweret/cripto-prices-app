@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import TableCoins from './components/TableCoins';
 import axios from 'axios';
+import Footer from './components/Footer';
 // descargamos a la biblioteca axios  para poder pedir la data de la api y despues la importamos
 // importamos el useEffect para que se ejecute una sola vez, usamos el objeto vacio 
 function App() {
@@ -25,12 +26,11 @@ function App() {
       <div className="row">
       <input type="text" placeholder='Search a Coin' className='form-control bg-dark text-light border-0 mt-4 text-center' onChange={e => setSearch(e.target.value) }/>
       <TableCoins coins ={coins} search = {search} /></div>
-
+      <Footer/>
 
     </div>
   );
 }
-
 
 
 export default App;
