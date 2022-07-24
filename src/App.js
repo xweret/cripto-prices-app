@@ -7,6 +7,7 @@ import axios from 'axios';
 function App() {
 
   const [coins, setCoins] = useState([]);
+  const [search, setSearch] = useState('');
 
   // usamos una funcion asincrona para pedir la data de la api
 
@@ -21,7 +22,10 @@ function App() {
 
   return (
     <div className="container">
-      <div className="row"><TableCoins coins ={coins} /></div>
+      <div className="row">
+      <input type="text" placeholder='Search a Coin' className='form-control bg-dark text-light border-0 mt-4 text-center' onChange={e => setSearch(e.target.value) }/>
+      <TableCoins coins ={coins} search = {search} /></div>
+
 
     </div>
   );
